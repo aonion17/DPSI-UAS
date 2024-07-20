@@ -59,7 +59,7 @@ exports.deleteProduct = async (req, res) => {
             return res.status(404).json({ message: 'Product not found' });
         }
         await product.destroy();
-        res.status(204).end();
+        res.status(200).json({ message: 'Product successfully deleted' });
     } catch (error) {
         res.status(400).json({ error: error.message });
     }

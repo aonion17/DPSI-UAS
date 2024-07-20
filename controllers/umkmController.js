@@ -58,7 +58,7 @@ exports.deleteUmkm = async (req, res) => {
             return res.status(404).json({ message: 'Umkm not found' });
         }
         await umkm.destroy();
-        res.status(204).end();
+        return res.status(200).json({ message: 'Umkm successfully deleted' });
     } catch (error) {
         res.status(400).json({ error: error.message });
     }
